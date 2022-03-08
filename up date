@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp9
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TbBox.Text = LbBox.Text;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string AddNumber = TbBox.Text;
+            CbBox.Items.Add(AddNumber);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LbBox.Items.Add("123456");
+            LbBox.Items.Add("234578");
+            LbBox.Items.Add("456709");
+            LbBox.Items.Add("100955");
+            LbBox.Items.Add("140744");
+            LbBox.Items.Add("080844");
+            LbBox.Items.Add("161155");
+            LbBox.Items.Add("900166");
+            LbBox.Items.Add("789003");
+            LbBox.Items.Add("235587");
+            LbBox.Items.Add("120090");
+            LbBox.Items.Add("487790");
+            LbBox.Items.Add("543959");
+            LbBox.Items.Add("374652");
+            LbBox.Items.Add("122369");
+            LbBox.Items.Add("374607");
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string my_lotto = CbBox.Text;
+            listBox1.Items.Add(my_lotto);
+            
+            string Number = comboBox1.Text;
+            listBox3.Items.Add(Number);
+            ///listBox3.Text = comboBox1.Text;
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox3.Text = comboBox1.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox3.Items.Clear();
+            listBox2.Items.Clear();
+            //lblAmount.Text = string.Empty;
+            MessageBox.Show("ทำรายการซื้อเสร็จสิ้น.", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}
